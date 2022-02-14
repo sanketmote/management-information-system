@@ -1,36 +1,60 @@
 const Sequelize = require('sequelize');
+const sequelize = require('../config');
 
-const students = sequelize.define(
-    'student',
+const students = require('./students');
+const section = require('./Section');
+
+const takes = sequelize.define(
+    'takes',
     {
         id: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            references:{
+                model: students,
+                key: 'id'
+            }
         },
+
         course_id: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
+            references:{
+                model: section,
+                key: 'course_id'
+            }
         },
         sec_id: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
+            references:{
+                model: section,
+                key: 'sec_idvv'
+            }
         },
         semester: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
+            references:{
+                model: section,
+                key: 'semester'
+            }
         },
         year: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
+            references:{
+                model: section,
+                key: 'year'
+            }
         },
         grade: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DOUBLE(2,2),
             allowNull: false,
         },
     }
 );
 
 //Export
-module.exports = students;
+module.exports = takes;
