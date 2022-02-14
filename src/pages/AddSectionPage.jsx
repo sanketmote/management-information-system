@@ -60,7 +60,7 @@ export default function AddSectionPage() {
     }
 
     return (
-        <div className='container container-fluid text-center'>
+        <div className='container container-fluid text-center  bg-info' style={{margin : 100}}>
             <h3>Add Section</h3>
             <br />
             <form onSubmit={submitHandler}>

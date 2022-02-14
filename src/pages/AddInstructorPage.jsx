@@ -37,7 +37,7 @@ export default function AddInstructorPage() {
     }
 
   return (
-    <div className='container container-fluid text-center'>
+    <div className='container container-fluid text-center  bg-info' style={{margin : 100}}>
         <h3>Add Instructor</h3>
         <br />
         <form onSubmit={submitHandler}>
