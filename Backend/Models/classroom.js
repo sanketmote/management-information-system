@@ -1,23 +1,23 @@
 const Sequelize = require('sequelize');
 
-const students = sequelize.define(
-    'student',
+const classroom = sequelize.define(
+    'classroom',
     {
-        id: {
+        class_id: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        building: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
         },
-        dept_name: {
-            type: Sequelize.DataTypes.STRING(15),
+        room_number: {
+            type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
         },
-        tot_cred: {
+        capacity: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
         },
@@ -26,4 +26,4 @@ const students = sequelize.define(
 );
 
 //Export
-module.exports = students;
+module.exports = classroom;

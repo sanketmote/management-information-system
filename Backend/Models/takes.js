@@ -9,19 +9,26 @@ const students = sequelize.define(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        course_id: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
         },
-        dept_name: {
+        sec_id: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
         },
-        tot_cred: {
+        semester: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
         },
-
+        year: {
+            type: Sequelize.DataTypes.INTEGER(11),
+            allowNull: false,
+        },
+        grade: {
+            type: Sequelize.DataTypes.INTEGER(11),
+            allowNull: false,
+        },
     }
 );
 

@@ -3,21 +3,21 @@ const Sequelize = require('sequelize');
 const students = sequelize.define(
     'student',
     {
-        id: {
+        time_slot_id: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        day: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
         },
-        dept_name: {
+        start_time: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
         },
-        tot_cred: {
+        end_time: {
             type: Sequelize.DataTypes.INTEGER(11),
             allowNull: false,
         },
