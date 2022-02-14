@@ -6,6 +6,7 @@
 .pnp.js
 /Backend/.env
 /Backend/node_modules
+/Backend/db.config.js
 # testing
 /coverage
 

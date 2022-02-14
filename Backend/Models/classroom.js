@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
-const classroom = sequelize.define(
+const classroom = db.sequelize.define(
     'classroom',
     {
         class_id: {
