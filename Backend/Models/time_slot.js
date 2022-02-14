@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
+const sequelize = require('../config');
 
-const students = sequelize.define(
-    'student',
+const time_slot = sequelize.define(
+    'time_slot',
     {
         time_slot_id: {
             type: Sequelize.DataTypes.INTEGER(11),
@@ -14,11 +15,11 @@ const students = sequelize.define(
             allowNull: false,
         },
         start_time: {
-            type: Sequelize.DataTypes.STRING(15),
+            type: Sequelize.TIME,
             allowNull: false,
         },
         end_time: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.TIME,
             allowNull: false,
         },
 
@@ -26,4 +27,4 @@ const students = sequelize.define(
 );
 
 //Export
-module.exports = students;
+module.exports = time_slot;
