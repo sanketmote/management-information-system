@@ -1,14 +1,19 @@
 const Express = require('../ServiceHost').Express;
 const DatabaseRepository = require('../MySqlDb/MySqlDBrepository');
 const classroom = require('../Models/classroom')
+const sequelize = require('../ServiceHost').sequelize;
 
 const router = Express.Router();
 
 router.post('/', async (req, res, next) => {
     try {
-        res.statuscode(200).send(req.body);
+        const transaction = await sequelize.transaction();
+        var AddAddressResponse = await DatabaseRepository.insertOne(classroom,req.body,null,transaction);
+        console.log(AddAddressResponse)
+        res.status(200).send(AddAddressResponse);
     } catch (err) {
-        res.statuscode(500).send(err);
+        console.log(err);
+        res.status(500).send(err);
     }
 });
 
