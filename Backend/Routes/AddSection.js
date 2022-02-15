@@ -10,7 +10,7 @@ const Sequelize = require('sequelize');
 router.get('/', async (req, res, next) => {
     try {
         const transaction = await sequelize.transaction();
-        const getQuery = 'select *  from Prereq';
+        const getQuery = 'select *  from Section';
 
         var QueryRes = await DatabaseRepository.query(getQuery, {
             replacement: [], type: Sequelize.QueryTypes.SELECT

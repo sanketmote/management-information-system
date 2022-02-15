@@ -61,7 +61,7 @@ export default function AddInstructorTeachesSectionPage() {
                 <label className='form-label' htmlFor="section">Section</label><br />
                 <select className='form-select' name="section" id="section" onChange={changeHandler}>
                     <option value={-1}>Select</option>
-                    {depts2.map((ele, ind)=><option key={ind} value={ele.id}>Course-{ele.course} Title-{ele.title} Semester-{ele.semester} {ele.year}</option>)}
+                    {depts2.map((ele, ind)=><option key={ind} value={ele.id}>Course-{ele.course_id} Title-{ele.title} Semester-{ele.semester} {ele.year}</option>)}
                 </select><br /><br />
     
                 <button type="submit" className='btn btn-success'>Add</button>

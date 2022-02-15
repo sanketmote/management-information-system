@@ -33,7 +33,7 @@ export default function AddAdvisorPage() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/advisors', theVals)
+        axios.post('http://localhost:8000/api/advisors', {s_id:theVals.student,i_id:theVals.instructor})
         .then((response)=>{
             alert("Added Successfully!")
         })
@@ -61,7 +61,7 @@ export default function AddAdvisorPage() {
                 <label className='form-label' htmlFor="instructor">Instructor</label><br />
                 <select className='form-select' name="instructor" id="instructor" onChange={changeHandler}>
                 <option value={-1}>Select</option>
-                    {depts2.map((ele, ind)=><option key={ind} value={ele.id}>{ele.name}</option>)}
+                    {depts2.map((ele, ind)=><option key={ind} value={ele.id}>{ele.inst_name}</option>)}
                 </select><br /><br />
     
                 <button type="submit" className='btn btn-success'>Add</button>

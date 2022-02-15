@@ -12,7 +12,7 @@ export default function MainPage() {
     return (
         <div style={styling}>
             <div className='container container-fluid text-center text-primary'>
-                <h3 style={{ margin: '10px auto' }}>College University Web Portal</h3>
+                <h3 style={{ marginBottom: '10px' , paddingTop: '15px'}}>STUDENT MANAGEMENT SYSTEM </h3> 
                 <div className="row" >
                     <div className="col col-lg-6 col-md-6 col-sm-12">
                         <div className="card" style={{ width: '18rem', margin: '25px 10px' }}>
@@ -95,32 +95,10 @@ export default function MainPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="col col-lg-6 col-md-6 col-sm-12">
-                        <div className="card" style={{ width: '18rem', margin: '25px 10px' }}>
-                            <div className="card-body" style={{backgroundColor:'#F5DEB3'}}>
-                                <h5 className="card-title">Student and Section</h5>
-                                <a href="/add-student-section" className="card-link">Add</a>
-                                <a href="/student-sections" className="card-link">View All</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col col-lg-6 col-md-6 col-sm-12">
-                        <div className="card" style={{ width: '18rem', margin: '25px 10px' }}>
-                            <div className="card-body" style={{backgroundColor:'#F5DEB3'}}>
-                                <h5 className="card-title">Instructor and Section</h5>
-                                <a href="/add-instructor-section" className="card-link">Add</a>
-                                <a href="/instructor-sections" className="card-link">View All</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div>
-                <br />
-                <br />
-                <br />
-                <br />
-
             </div>
         </div>
 

@@ -32,22 +32,22 @@ export default function SectionsPage() {
           <th scope="col">Classroom Building</th>
           <th scope="col">Classroom Room Number</th>
           <th scope="col">Day</th>
-          <th scope="col">Start Time</th>
-          <th scope="col">End Time</th>
+          {/* <th scope="col">Start Time</th>
+          <th scope="col">End Time</th> */}
         </tr>
       </thead>
       <tbody>
     
           {depts.map((ele, ind)=><tr>
           <th key={ind} scope="row">{ind+1}</th>
-          <td>{ele.course}</td>
+          <td>{ele.course_id}</td>
           <td>{ele.semester}</td>
           <td>{ele.year}</td>
-          <td>{ele.classroomBuilding}</td>
-          <td>{ele.classroomRoomNumber}</td>
-          <td>{ele.timeslot.day}</td>
-          <td>{ele.timeslot.startTime}</td>
-          <td>{ele.timeslot.endTime}</td>
+          <td>{ele.building}</td>
+          <td>{ele.room_number}</td>
+          <td>{ele.time_slot_id}</td>
+          {/* <td>{ele.timeslot.startTime}</td>
+          <td>{ele.timeslot.endTime}</td> */}
         </tr>)}
         
       </tbody>

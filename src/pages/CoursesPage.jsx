@@ -35,7 +35,7 @@ export default function CoursesPage() {
           {depts.map((ele, ind)=><tr>
           <th key={ind} scope="row">{ind+1}</th>
           <td>{ele.credits}</td>
-          <td>{ele.department}</td>
+          <td>{ele.dept_name}</td>
           <td>{ele.title}</td>
         </tr>)}
         

@@ -35,9 +35,9 @@ export default function InstructorsPage() {
     
           {depts.map((ele, ind)=><tr>
           <th key={ind} scope="row">{ind+1}</th>
-          <td>{ele.name}</td>
+          <td>{ele.inst_name}</td>
           <td>{ele.salary}</td>
-          <td>{ele.department}</td>
+          <td>{ele.dept_name}</td>
         </tr>)}
         
       </tbody>

@@ -16,8 +16,26 @@ router.get('/', async (req, res, next) => {
             replacement: [], type: Sequelize.QueryTypes.SELECT
         });
         
-        
-        res.status(200).send(QueryRes);
+        var ans = []; //
+        for (var i = 0; i < QueryRes.length; i++) {
+            const getQueryS = 'select *  from Course where course_id = ' + QueryRes[i].course_id;
+            const getQueryI = 'select *  from Course where course_id = ' +  + QueryRes[i].prereq_id;
+            var QueryResS = await DatabaseRepository.query(getQueryS, {
+                replacement: [], type: Sequelize.QueryTypes.SELECT
+            });
+            var QueryResI = await DatabaseRepository.query(getQueryI, {
+                replacement: [], type: Sequelize.QueryTypes.SELECT
+            });
+            console.log(QueryResS,QueryResI);
+            var tmp = {
+                course: QueryResS[0].title,
+                prereq: QueryResI[0].title,
+            }
+            ans.push(tmp);
+        }
+
+
+        res.status(200).send(ans);
     } catch (err) {
         console.log(err);
         res.status(500).send(err);

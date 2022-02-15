@@ -34,8 +34,8 @@ export default function AdvisorsPage() {
     
           {depts.map((ele, ind)=><tr>
           <th key={ind} scope="row">{ind+1}</th>
-          <td>{ele.student}</td>
-          <td>{ele.instructor}</td>
+          <td>{ele.s_name}</td>
+          <td>{ele.i_name}</td>
         </tr>)}
         
       </tbody>

@@ -45,12 +45,12 @@ export default function AddStudentPage() {
             <input className='form-control' value={theVals.name} onChange={changeHandler} type="text" name="name" id="name" required /><br /><br />
             
             <label className='form-label' htmlFor="credits">Credits</label><br />
-            <input className='form-control' value={theVals.credits} onChange={changeHandler} type="text" name="credits" id="credits" required /><br /><br />
+            <input className='form-control' value={theVals.credits} onChange={changeHandler} type="text" name="tot_cred" id="credits" required /><br /><br />
 
             <label className='form-label' htmlFor="department">Department</label><br />
-            <select className='form-select' name="department" id="department" onChange={changeHandler}>
+            <select className='form-select' name="dept_name" id="department" onChange={changeHandler}>
             <option value={-1}>Select</option>
-                {depts.map((ele, ind)=><option key={ind} value={ele.id}>{ele.name}</option>)}
+                {depts.map((ele, ind)=><option key={ind} value={ele.id}>{ele.dept_name}</option>)}
             </select><br /><br />
 
             <button type="submit" className='btn btn-success'>Add</button>

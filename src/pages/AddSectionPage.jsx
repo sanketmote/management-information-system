@@ -70,22 +70,28 @@ export default function AddSectionPage() {
                 <label className='form-label' htmlFor="year">Year</label><br />
                 <input className='form-control' value={theVals.year} onChange={changeHandler} type="text" name="year" id="year" required /><br /><br />
 
-                <label className='form-label' htmlFor="course">Course</label><br />
-                <select className='form-select' name="course" id="course" onChange={changeHandler}>
+                <label className='form-label' htmlFor="course_id">Course</label><br />
+                <select className='form-select' name="course_id" id="course" onChange={changeHandler}>
                 <option value={-1}>Select</option>
-                    {depts.map((ele, ind)=><option key={ind} value={ele.id}>{ele.title}</option>)}
+                    {depts.map((ele, ind)=><option key={ind} value={ele.course_id}>{ele.title}</option>)}
                 </select><br /><br />
 
-                <label className='form-label' htmlFor="classroom">Classroom</label><br />
-                <select className='form-select' name="classroom" id="classroom" onChange={changeHandler}>
+                <label className='form-label' htmlFor="building">Building</label><br />
+                <select className='form-select' name="building" id="classroom" onChange={changeHandler}>
                 <option value={-1}>Select</option>
-                    {depts2.map((ele, ind)=><option key={ind} value={ele.id}>{ele.building} {ele.room_number}</option>)}
+                    {depts2.map((ele, ind)=><option key={ind} value={ele.building}>{ele.building}</option>)}
                 </select><br /><br />
 
-                <label className='form-label' htmlFor="timeSlot">Time Slot</label><br />
-                <select className='form-select' name="timeSlot" id="timeSlot" onChange={changeHandler}>
+                <label className='form-label' htmlFor="room_number">room_number</label><br />
+                <select className='form-select' name="room_number" id="classroom" onChange={changeHandler}>
                 <option value={-1}>Select</option>
-                    {depts3.map((ele, ind)=><option key={ind} value={ele.id}>{ele.day} {ele.startTime}-{ele.endTime}</option>)}
+                    {depts2.map((ele, ind)=><option key={ind} value={ele.room_number}>{ele.room_number}</option>)}
+                </select><br /><br />
+
+                <label className='form-label' htmlFor="time_slot_id">Time Slot</label><br />
+                <select className='form-select' name="time_slot_id" id="timeSlot" onChange={changeHandler}>
+                <option value={-1}>Select</option>
+                    {depts3.map((ele, ind)=><option key={ind} value={ele.time_slot_id}>{ele.day} {ele.start_time}-{ele.end_time}</option>)}
                 </select><br /><br />
 
                 <button type="submit" className='btn btn-success'>Add</button>

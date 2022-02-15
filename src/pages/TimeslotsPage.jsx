@@ -37,8 +37,8 @@ export default function TimeslotsPage() {
           {depts.map((ele, ind)=><tr>
           <th key={ind} scope="row">{ind+1}</th>
           <td>{ele.day}</td>
-          <td>{ele.startTime}</td>
-          <td>{ele.endTime}</td>
+          <td>{ele.start_time}</td>
+          <td>{ele.end_time}</td>
         </tr>)}
         
       </tbody>

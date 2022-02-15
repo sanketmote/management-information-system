@@ -16,11 +16,11 @@ const time_slot = db.sequelize.define(
             allowNull: false,
         },
         start_time: {
-            type: Sequelize.TIME,
+            type: Sequelize.DataTypes.STRING(20),
             allowNull: false,
         },
         end_time: {
-            type: Sequelize.TIME,
+            type: Sequelize.DataTypes.STRING(20),
             allowNull: false,
         },
 
