@@ -1,28 +1,32 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
-const Department = sequelize.define(
+const Department = db.sequelize.define(
     'Department',
     {
         dept_id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            unique: true
         },
         dept_name: {
-            type: Sequelize.DataTypes.STRING(100),
+            type: Sequelize.DataTypes.STRING(15),
             primaryKey: true,
-            allowedNull: false
+            allowNull: false,
+            unique: true
         },
         building: {
-            type: Sequelize.DataTypes.STRING(100),
-            allowedNull: false
+            type: Sequelize.DataTypes.STRING(15),
+            allowNull: false,
         },
         budget: {
-            type: Sequelize.DataTypes.INTEGER(50),
-            allowedNull: false
+            type: Sequelize.DataTypes.INTEGER(15),
+            allowNull: false,
         }
+    },{
+        tableName: 'Department',
     }
 );
 

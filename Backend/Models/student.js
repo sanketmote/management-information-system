@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
 const Department = require('./Department');
 
-const students = sequelize.define(
+const students = db.sequelize.define(
     'students',
     {
         id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
@@ -25,10 +25,12 @@ const students = sequelize.define(
             }
         },
         tot_cred: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
         },
 
+    },{
+        tableName: 'students'
     }
 );
 

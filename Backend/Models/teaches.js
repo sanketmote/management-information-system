@@ -1,23 +1,24 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
 const section =  require('./section')
 const Instructor = require('./Instructor')
 
-const teaches = sequelize.define(
+const teaches = db.sequelize.define(
     'teaches',
     {
         id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
             references:{
                 model: Instructor,
                 key: 'id'
             }
         },
         course_id: {
-            type: Sequelize.DataTypes.STRING(15),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             references:{
                 model: section,
@@ -25,7 +26,7 @@ const teaches = sequelize.define(
             }
         },
         sec_id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             references:{
                 model: section,
@@ -33,7 +34,7 @@ const teaches = sequelize.define(
             }
         },
         semester: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
             references:{
                 model: section,
@@ -41,13 +42,15 @@ const teaches = sequelize.define(
             }
         },
         year: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             references:{
                 model: section,
                 key: 'year'
             }
         },
+    },{
+        tableName: 'teaches'
     }
 );
 

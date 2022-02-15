@@ -36,7 +36,7 @@ export default function DepartmentsPage() {
 
       {depts.map((ele, ind)=><tr>
       <th key={ind} scope="row">{ind+1}</th>
-      <td>{ele.name}</td>
+      <td>{ele.dept_name}</td>
       <td>{ele.building}</td>
       <td>{ele.budget}</td>
     </tr>)}

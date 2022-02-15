@@ -27,7 +27,7 @@ export default function AddDepartmentPage() {
         <br />
         <form onSubmit={submitHandler}>
             <label className='form-label' htmlFor="name">Name</label><br />
-            <input className='form-control' value={theVals.name} onChange={changeHandler} type="text" name="name" id="name" required /><br /><br />
+            <input className='form-control' value={theVals.name} onChange={changeHandler} type="text" name="dept_name" id="name" required /><br /><br />
             
             <label className='form-label' htmlFor="building">Building</label><br />
             <input className='form-control' value={theVals.building} onChange={changeHandler} type="text" name="building" id="building" required /><br /><br />

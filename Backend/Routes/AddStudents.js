@@ -1,9 +1,29 @@
 const Express = require('../ServiceHost').Express;
 const DatabaseRepository = require('../MySqlDb/MySqlDBrepository');
-const students = require('../Models/students')
+const students = require('../Models/student')
 const sequelize = require('../ServiceHost').sequelize;
 
 const router = Express.Router();
+
+const Sequelize = require('sequelize');
+
+router.get('/', async (req, res, next) => {
+    try {
+        const transaction = await sequelize.transaction();
+        const getQuery = 'select *  from students';
+
+        var QueryRes = await DatabaseRepository.query(getQuery, {
+            replacement: [], type: Sequelize.QueryTypes.SELECT
+        });
+        
+        
+        res.status(200).send(QueryRes);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    }
+});
+
 
 router.post('/', async (req, res, next) => {
     try {

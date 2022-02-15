@@ -1,21 +1,22 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
 const Course = require('./Course');
 const classroom = require('./classroom')
+const student = require('./student');
 const time_slot = require('./time_slot')
 
-const Section = sequelize.define(
+const Section = db.sequelize.define(
     'Section',
     {
         course_id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
+            unique: true,
             primaryKey: true,
-            autoIncrement: true,
             references: {
                 model: Course,
-                key: "id"
+                key: "course_id"
             },
         },
         sec_id: {
@@ -23,42 +24,47 @@ const Section = sequelize.define(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+            unique: true,
         },
         semester: {
             type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
             primaryKey: true,
+            unique: true
         },
         year: {
-            type: Sequelize.DataTypes.STRING(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             primaryKey: true,
+            unique: true
         },
         building: {
-            type: Sequelize.DataTypes.STRING(11),
+            type: Sequelize.DataTypes.STRING(15),
             allowNull: false,
-            references : {
-                model : classroom,
-                key : 'building'
+            references: {
+                model: classroom,
+                key: 'building'
             }
         },
         room_number: {
-            type: Sequelize.DataTypes.STRING(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
-            references : {
-                model : classroom,
-                key : 'room_number'
+            references: {
+                model: classroom,
+                key: 'room_number'
             }
         },
         time_slot_id: {
-            type: Sequelize.DataTypes.STRING(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
-            references : {
-                model : student,
-                key : 'time_slot_id'
+            references: {
+                model: time_slot,
+                key: 'time_slot_id'
             }
         },
-    }
+    }, {
+    tableName: 'Section'
+}
 );
 
 //Export

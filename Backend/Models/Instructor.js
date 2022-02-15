@@ -1,33 +1,35 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
 const Department = require('./Department');
 
-const Instructor = sequelize.define(
+const Instructor = db.sequelize.define(
     'Instructor',
     {
         id: {
-            type: Sequelize.DataTypes.INTEGER(20),
+            type: Sequelize.DataTypes.INTEGER(15),
             primaryKey: true,
             autoIncrement: true,
-            allowedNull: false
+            allowNull: false,
         },
         inst_name: {
-            type: Sequelize.DataTypes.STRING(100),
-            allowedNull: false
+            type: Sequelize.DataTypes.STRING(15),
+            allowNull: false,
         },
         dept_name: {
-            type: Sequelize.DataTypes.STRING(100),
-            allowedNull: false,
+            type: Sequelize.DataTypes.STRING(15),
+            allowNull: false,
             references : {
                 model: Department,
-                key:dept_name,
+                key:'dept_name',
             }
         },
         salary: {
-            type: Sequelize.DataTypes.INTEGER(50),
-            allowedNull: false
+            type: Sequelize.DataTypes.INTEGER(15),
+            allowNull: false,
         }
+    },{
+        tableName: 'Instructor',
     }
 );
 

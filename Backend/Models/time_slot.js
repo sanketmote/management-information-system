@@ -1,14 +1,15 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
-const time_slot = sequelize.define(
+const time_slot = db.sequelize.define(
     'time_slot',
     {
         time_slot_id: {
-            type: Sequelize.DataTypes.INTEGER(11),
+            type: Sequelize.DataTypes.INTEGER(15),
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            unique:true,
         },
         day: {
             type: Sequelize.DataTypes.STRING(15),
@@ -23,6 +24,8 @@ const time_slot = sequelize.define(
             allowNull: false,
         },
 
+    },{
+        tableName: 'time_slot'
     }
 );
 

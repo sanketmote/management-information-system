@@ -1,33 +1,37 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
 const Department = require('./Department');
 
-const Course = sequelize.define(
+const Course = db.sequelize.define(
     'Course',
     {
         course_id: {
-            type: Sequelize.DataTypes.INTEGER(100),
+            type: Sequelize.DataTypes.INTEGER(15),
             primaryKey: true,
-            allowedNull: false
+            allowNull: false,
+            unique: true,
+            autoIncrement: true
         },
         title: {
-            type: Sequelize.DataTypes.STRING(100),
-            allowedNull: false
+            type: Sequelize.DataTypes.STRING(15),
+            allowNull: false,
         },
         dept_name: {
-            type: Sequelize.DataTypes.STRING(100),
-            allowedNull: false,
-            references : {
+            type: Sequelize.DataTypes.STRING(15),
+            allowNull: false,
+            references: {
                 model: Department,
-                key:dept_name,
+                key: 'dept_name'
             }
         },
         credits: {
-            type: Sequelize.DataTypes.INTEGER(50),
-            allowedNull: false
+            type: Sequelize.DataTypes.INTEGER(15),
+            allowNull: false,
         }
-    }
+    }, {
+    tableName: 'Course',
+}
 );
 
 //Export

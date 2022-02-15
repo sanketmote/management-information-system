@@ -1,28 +1,30 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../config');
+const db = require('../config');
 
-const Department = require('./Department');
+const Course = require('./Course');
 
-const Prereq = sequelize.define(
+const Prereq = db.sequelize.define(
     'Prereq',
     {
         course_id: {
-            type: Sequelize.DataTypes.INTEGER(100),
+            type: Sequelize.DataTypes.INTEGER(15),
             references: {
-                model: Department,
-                key: "dept_id"
+                model: Course,
+                key: "course_id"
             },
-            allowedNull: false
+            allowNull: false
         },
         prereq_id: {
-            type: Sequelize.DataTypes.INTEGER(100),
+            type: Sequelize.DataTypes.INTEGER(15),
             primaryKey: true,
-            allowedNull: false, 
+            allowNull: false, 
             references: {
-                model: Department,
-                key: "dept_id"
+                model: Course,
+                key: "course_id"
             },
         }
+    },{
+        tableName: 'Prereq',
     }
 );
 

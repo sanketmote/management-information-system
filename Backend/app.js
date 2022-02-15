@@ -15,15 +15,25 @@ var  AddStudents = require('./Routes/AddStudents');
 var  AddTakes = require('./Routes/AddTakes');
 var  AddTeaches = require('./Routes/AddTeaches');
 var  AddTimeSlot = require('./Routes/AddTimeSlot');
+var  AddAdvisor = require('./Routes/AddAdvisor');
+var  AddCourse = require('./Routes/AddCourse');
+var  AddDepartment = require('./Routes/AddDepartment');
+var  AddInstructor = require('./Routes/AddInstructor');
+var  AddPrereq = require('./Routes/AddPrereq');
 
 expressApp.use(cors({origin:'*'}));
 
 expressApp.use('/api/classrooms',AddClassRoom);
-expressApp.use('/api/classrooms',AddSection);
-expressApp.use('/api/classrooms',AddStudents);
-expressApp.use('/api/classrooms',AddTakes);
-expressApp.use('/api/classrooms',AddTeaches);
-expressApp.use('/api/classrooms',AddTimeSlot);
+expressApp.use('/api/sections',AddSection);
+expressApp.use('/api/students',AddStudents);
+expressApp.use('/api/studenttakessection',AddTakes);
+expressApp.use('/api/instructorteachessection',AddTeaches);
+expressApp.use('/api/timeslots',AddTimeSlot);
+expressApp.use('/api/advisors',AddAdvisor);
+expressApp.use('/api/courses',AddCourse);
+expressApp.use('/api/departments',AddDepartment);
+expressApp.use('/api/instructors',AddInstructor);
+expressApp.use('/api/prerequisites',AddPrereq);
 
 expressApp.listen(8000,function(){
     console.log("server has started on port 8000");
