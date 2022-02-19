@@ -52,6 +52,7 @@ export default function SectionsPage() {
         
       </tbody>
     </table>
+    <div class="plus_sign "><a href="/add-section">+</a></div>
         </div>
       )
 }
