@@ -24,14 +24,24 @@ import StudentTakesSectionsPage from './pages/StudentTakesSectionsPage';
 import AddInstructorTeachesSectionPage from './pages/AddInstructorTeachesSectionPage';
 import InstructorTeachesSectionsPage from './pages/InstructorTeachesSectionsPage';
 import Sidebar from './pages/sidebar';
+import Cookies from 'js-cookie';
+import React, {useEffect, useState} from 'react'
+
+import Login from './pages/LoginPage'
 
 function App() {
+  const [data, setData] = useState('');
+  useEffect(async ()=>{
+    var data = Cookies.get('user');
+    setData(data);
+}, [])
   return (
     <>
       <Router className='app'>
-        <Sidebar  />
+      {(data != undefined)?<Sidebar  />:null}
+        
         <Routes>
-          <Route exact path="/" element={<MainPage />} />
+          <Route exact path="/" element={(data != undefined)?<MainPage />:<Login />} />
           <Route exact path="/add-department" element={<AddDepartmentPage />} />
           <Route exact path="/departments" element={<DepartmentsPage />} />
           <Route exact path="/add-student" element={<AddStudentPage />} />

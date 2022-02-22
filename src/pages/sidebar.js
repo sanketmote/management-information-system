@@ -6,6 +6,8 @@ import {
     CDBSidebarMenu,
     CDBSidebarMenuItem,
 } from 'cdbreact';
+import Cookies from 'js-cookie';
+
 import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
@@ -43,6 +45,12 @@ export default function Sidebar() {
                         </NavLink>
                         <NavLink exact to="/sections" activeClassName="activeClicked">
                             <CDBSidebarMenuItem>Section Detail</CDBSidebarMenuItem>
+                        </NavLink>
+                        <NavLink exact to="/" activeClassName="activeClicked" onClick={()=>{
+                            Cookies.remove('user');
+                            window.location.href = '/';
+                        }}>
+                            <CDBSidebarMenuItem>Log Out</CDBSidebarMenuItem>
                         </NavLink>
 
                     </CDBSidebarMenu>
