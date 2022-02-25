@@ -6,7 +6,7 @@ export default class Login extends Component {
     render() {
         return (
             <div className="container">
-                <form  onSubmit={(event)=>{
+                <form action="/" onSubmit={(event)=>{
                 if(event.target.email.value === 'sanketmote01@gmail.com' && event.target.password.value === 'Sanket@123'){
                     Cookies.set("user", event.target.email.value, { expires: 1 / 24 });
                     window.location.href = '/';

@@ -48,7 +48,7 @@ export default function AddAdvisorPage() {
 
 
     return (
-        <div className='container container-fluid text-center bg-info' style={{margin : 100}}>
+        <div className='container container-fluid text-center  ' style={{margin : 100}}>
             <h3>Add Advisor</h3>
             <br />
             <form onSubmit={submitHandler}>
