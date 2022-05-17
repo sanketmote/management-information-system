@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+body {
+  background-color: cadetblue!important;
+  /* overflow: hidden; */
+}
+
+table,thead,tbody,tr,td,th {
+  border-color: black!important;
+  border-style: double!important;
+}
 .container {
   padding: 5%;
   float: right!important;
@@ -29,6 +38,10 @@
   height: 2%; */
 }
 
+label {
+  text-align:left;
+  width: 100%;
+}
 .plus_sign a {
   height:10px;
   width:10px;
@@ -43,6 +56,9 @@
   float: right;
 }
 
+button {
+  background-color: blue!important;
+}
 .about .content h3 {
   font-weight: 600;
   font-size: 32px;
